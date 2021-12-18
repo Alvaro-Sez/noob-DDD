@@ -6,5 +6,10 @@ class Todo {
         this.expiresAt = expiresAt;
     }
 
-    
+    idValidation(){
+        if(this.id != id){
+            
+        }
+    }
+
 }
