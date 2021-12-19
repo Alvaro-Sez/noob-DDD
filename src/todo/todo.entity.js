@@ -21,9 +21,9 @@ export default function buildMakeTodo ({ Id, sanitize }){
         }
 
         return Object.freeze({
-            getId:() => id,
-            getCreatedOn:() => createdOn,
-            getDescriptionTask: () => descriptionTask,
+            id,
+            createdOn,
+            descriptionTask
         })
     }
 }
