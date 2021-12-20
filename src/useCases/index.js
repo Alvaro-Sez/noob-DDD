@@ -1,14 +1,14 @@
 import makeCreateTodo from "./createTodo";
-import makeDeleteTodo from "./deleteTodo";
+import makeRemoveTodo from "./removeTodo";
 import todoDb from "../dataAccess"
 
 const createTodo = makeCreateTodo({todoDb})
-const deleteTodo = makeDeleteTodo({todoDb})
+const removeTodo = makeRemoveTodo({todoDb})
 
 const userService = {
     createTodo,
-    deleteTodo
+    removeTodo
 }
 
 export default userService;
-export { createTodo, deleteTodo }
+export { createTodo, removeTodo }
