@@ -2,9 +2,14 @@ export default function makeTodoDb ({todoModel}) {
     return Object.freeze({
         addTodo,
         findTodoById,
-        deleteTodo
+        deleteTodo,
+        findTodos
     })
-
+    async function findTodos(){
+        const todos = await todoModel.find()
+        if(!todos) todos = null
+        return todos;
+    }
     async function addTodo(todo){
         const addNewTodo = new todoModel(todo)
         const saveNewTodo = await addNewTodo.save()
