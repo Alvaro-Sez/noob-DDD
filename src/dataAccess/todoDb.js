@@ -11,16 +11,19 @@ export default function makeTodoDb ({todoModel}) {
         return todos;
     }
     async function addTodo(todo){
+
         const addNewTodo = new todoModel(todo)
+        console.log(addNewTodo)
+
         const saveNewTodo = await addNewTodo.save()
 
         return saveNewTodo
     }
     
-    async function findTodoById(todo){
-        const { _id } = todo
-        const todoFound = await todoModel.findById({_id})
-        if(!todoFound) todoFound = null;
+    async function findTodoById(id){
+
+        const todoFound = await todoModel.findById(id)
+
         return todoFound
     }
     

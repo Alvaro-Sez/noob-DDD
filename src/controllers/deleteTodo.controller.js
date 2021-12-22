@@ -1,8 +1,8 @@
 export default function makeDeleteTodo( {removeTodo} ) {
     return async function deleteTodo(httpRequest) {
         try{
-            const body = httpRequest.body;
-            const deleted = await removeTodo(body.params)
+            const params = httpRequest.params;
+            const deleted = await removeTodo(params)
 
             return {
                 headers: {

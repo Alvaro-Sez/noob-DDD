@@ -1,13 +1,11 @@
 export default function buildMakeTodo ({ Id }){
     return function makeTodo({
-        id = Id.makeId(),
+        _id = Id.makeId(),
         createdOn = Date.now(),
         descriptionTask
     }) {
-        console.log(id)
-        console.log(typeof id)
-        if(!Id.isValidId(id)){
-            throw new Error("Todo must have valid id")
+        if(!Id.isValidId(_id)){
+            throw new Error("Todo must have valid _id")
         }
         if(!descriptionTask){
             throw new Error("Todo must have a task description")
@@ -22,9 +20,9 @@ export default function buildMakeTodo ({ Id }){
         } */
 
         return Object.freeze({
-            id,
+            _id,
             createdOn,
-            descriptionTask
+            descriptionTask 
         })
     }
 }
