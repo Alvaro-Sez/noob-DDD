@@ -1,9 +1,11 @@
-export default function buildMakeTodo ({ Id, sanitize }){
+export default function buildMakeTodo ({ Id }){
     return function makeTodo({
         id = Id.makeId(),
         createdOn = Date.now(),
         descriptionTask
     }) {
+        console.log(id)
+        console.log(typeof id)
         if(!Id.isValidId(id)){
             throw new Error("Todo must have valid id")
         }
@@ -13,12 +15,11 @@ export default function buildMakeTodo ({ Id, sanitize }){
         if(descriptionTask.length < 1){
             throw new Error("Todo's task description must be longer")
         }
+
         
-        let sanitizedDescription = sanitize(descriptionTask).trim()
-        
-        if(sanitizedDescription < 1){
+        /* if(sanitizedDescription < 1){
             throw new Error("Description contains no usable text")
-        }
+        } */
 
         return Object.freeze({
             id,

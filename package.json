@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel ./src/index.js -d dist",
-    "devStart": "npm run build && nodemon dist/index.js"
+    "build": "babel ./src -d dist",
+    "devStart": "npm run build && nodemon dist/index.js",
+    "dev": "npx babel-node ./src/index.js"
   },
   "keywords": [],
   "author": "",

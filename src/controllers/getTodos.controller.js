@@ -1,5 +1,5 @@
-export default function makeListTodos({ listTodos }) {
-    return async function listTodos(httpRequest) {
+export default function makeGetTodos({ listTodos }) {
+    return async function getTodos(httpRequest) {
         try {
             const todos = await listTodos();
             return {
@@ -7,7 +7,7 @@ export default function makeListTodos({ listTodos }) {
                     'Content-Type': 'application/json',
                 },
                 statusCode:200,
-                body: { todos }
+                body: todos 
             }                    
         } catch (e) {
             console.log(e)

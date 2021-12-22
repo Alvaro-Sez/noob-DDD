@@ -1,0 +1,18 @@
+{
+    "version": "1.0.0",
+    "name": "tododdd",
+    "dependencies": {
+        "express": {
+            "version": "4.17.2"
+        },
+        "mongoose": {
+            "version": "6.1.2"
+        },
+        "sanitize-html": {
+            "version": "2.6.1"
+        },
+        "uuid": {
+            "version": "8.3.2"
+        }
+    }
+}

@@ -1,17 +1,17 @@
-import makeCreateTodo from "./createTodo";
-import makeRemoveTodo from "./removeTodo";
-import makeListTodos from "./listTodos.useCase"
-import todoDb from "../dataAccess"
+import makeAddTodo from "./addTodo.useCase.js";
+import makeRemoveTodo from "./removeTodo.useCase.js";
+import makeListTodos from "./listTodos.useCase.js"
+import todoDb from "../dataAccess/index.js"
 
-const createTodo = makeCreateTodo({todoDb})
+const addTodo = makeAddTodo({todoDb})
 const removeTodo = makeRemoveTodo({todoDb})
 const listTodos = makeListTodos({todoDb})
 
 const userService = {
-    createTodo,
+    addTodo,
     removeTodo,
     listTodos
 }
 
 export default userService;
-export { createTodo, removeTodo, listTodos }
+export { addTodo, removeTodo, listTodos }

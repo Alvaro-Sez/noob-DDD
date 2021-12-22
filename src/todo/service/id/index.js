@@ -1,8 +1,8 @@
-import uuid from 'uuid';
+const {v4, validate} = require('uuid');
 
 const Id = Object.freeze({
-    makeId: uuid.v4,
-    isValidId: uuid.validate
+    makeId: v4,
+    isValidId: validate
 })
 
 export default Id

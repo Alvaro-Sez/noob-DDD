@@ -1,8 +1,8 @@
-import makeTodo from "../todo";
+import makeTodo from "../todo/index";
 
-export default function makeCreateTodo({todoDb}){
+export default function makeAddTodo({todoDb}){
 
-    return async function createTodo(todoData){
+    return async function addTodo(todoData){
         const todo = makeTodo(todoData)
         const exists = await todoDb.findTodoById(todoData)
 

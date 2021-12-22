@@ -1,8 +1,8 @@
-export default function makePostTodo({ createTodo }) {
+export default function makePostTodo({ addTodo }) {
     return async function postTodo(httpRequest) {
         try{
             const body = httpRequest.body;
-            const posted = await createTodo(body);
+            const posted = await addTodo(body);
             return {
                 headers: {
                     'Content-Type': 'application/json',

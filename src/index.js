@@ -1,16 +1,17 @@
-import dotenv from 'dotenv';
-import express from 'express';
+const express = require('express');
 import makeExpressCallback from './expressCallback/index';
-import {
-    postTodo,
-    deleteTodo,
-} from './controllers'
+import todoController from './controllers/index';
+
+const { getTodos, postTodo, deleteTodo } = todoController;
+
 const app = express();
 
-app.listen(3000, ()=>console.log("app running port 3000"))
 
 app.use(express.json())
 
+app.get('/todos', makeExpressCallback(getTodos))
 app.post('/todos', makeExpressCallback(postTodo))
 app.delete('/todos/:id', makeExpressCallback(deleteTodo))
 
+
+app.listen(3000, ()=>console.log("app running port 3000"))

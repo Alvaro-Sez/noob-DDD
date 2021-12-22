@@ -1,17 +1,19 @@
-import makePostTodo from "./postTodo.controller";
-import makeDeleteTodo from "./deleteTodo.controller";
-import makeListTodos from "./listTodos.controller";
-import { createTodo, removeTodo, listTodos } from "../useCases/index";
+import makePostTodo from "./postTodo.controller.js";
+import makeDeleteTodo from "./deleteTodo.controller.js";
+import makeGetTodos from "./getTodos.controller.js";
+import userService from "../useCases/index.js";
 
-const postTodo = makePostTodo({createTodo});
-const deleteTodo = makeDeleteTodo({removeTodo});
-const listTodos = makeListTodos({listTodos});
+const { addTodo, removeTodo, listTodos } = userService
+
+const deleteTodo = makeDeleteTodo({removeTodo}); 
+const postTodo = makePostTodo({addTodo});
+const getTodos = makeGetTodos({listTodos});
 
 const todoController = Object.freeze({
     postTodo,
     deleteTodo,
-    listTodos
+    getTodos
 })
 
 export default todoController;
-export { postTodo, deleteTodo, listTodos };
+export { postTodo, deleteTodo, getTodos };
