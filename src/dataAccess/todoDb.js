@@ -7,7 +7,7 @@ export default function makeTodoDb ({todoModel}) {
     })
     async function findTodos(){
         const todos = await todoModel.find()
-        if(!todos) todos = null
+        if(!todos.length) return null
         return todos;
     }
     async function addTodo(todo){
