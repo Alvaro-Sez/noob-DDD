@@ -9,6 +9,9 @@
     "dev": "npx babel-node ./src/index.js",
     "test": "jest"
   },
+  "jest":{
+    "verbose": true
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,15 +19,16 @@
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.5",
     "@babel/node": "^7.16.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "babel-jest": "^27.4.5",
     "dotenv": "^10.0.0",
+    "jest": "^27.4.5",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
     "@types/jest": "^27.0.3",
     "express": "^4.17.2",
-    "jest": "^27.4.5",
     "mongoose": "^6.1.2",
     "sanitize-html": "^2.6.1",
     "uuid": "^8.3.2"
